@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ana Laís Macêdo Fonte — Developer & Designer building at the intersection of engineering and design.">
+  <meta property="og:title" content="Ana Laís Macêdo — Portfolio">
+  <meta property="og:description" content="Developer & Designer building digital experiences.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#060810">
+  <title>Ana Laís Macêdo Fonte — Developer &amp; Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page loader -->
+  <div class="page-loader" id="pageLoader" aria-label="Loading portfolio" role="status">
+    <div class="loader-content">
+      <div class="loader-logo" aria-hidden="true">M</div>
+      <div class="loader-text" id="loaderText">initializing...</div>
+      <div class="loader-bar-wrap" aria-hidden="true">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <div class="loader-status" id="loaderStatus" aria-hidden="true">0%</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor (visual only) -->
+  <div class="cursor-outer" id="cursorOuter" aria-hidden="true"></div>
+  <div class="cursor-inner" id="cursorInner" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- Background orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <!-- Skip navigation for accessibility -->
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- NAV -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="Home">
+      <div class="logo-mark" aria-hidden="true">M</div>
+      <div class="logo-text">MACEDO <span>Digital Solutions</span></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#contact" class="nav-cta">get in touch →</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <ul role="list">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#contact">get in touch</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge" aria-live="polite">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span id="badgeText">Available for new projects</span>
+          </div>
+          <h1 class="hero-title">
+            Product-minded<br>
+            <span class="line2 glitch-text" data-text="developer focused">developer focused</span><br>
+            on digital systems.
+          </h1>
+          <p class="hero-sub">
+            I design and build interfaces, systems, and digital experiences —
+            <span class="typewriter" id="typewriter" aria-label="combining engineering precision with product-level thinking."></span>
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">View Projects <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn-ghost">Let's Talk</a>
+          </div>
+        </div>
+
+        <div class="hero-panel-wrapper">
+          <div class="hero-panel">
+            <div class="scan-line" aria-hidden="true"></div>
+            <div class="panel-header">
+              <div class="panel-avatar" aria-hidden="true">AL</div>
+              <div>
+                <div class="panel-name">Ana Laís Macêdo Fonte</div>
+                <div class="panel-role">// Developer &amp; Designer</div>
+              </div>
+              <div class="panel-available" role="status" aria-label="Currently open to work">
+                <span class="avail-dot" aria-hidden="true"></span> open
+              </div>
+            </div>
+            <div class="panel-stats">
+              <div class="stat-card">
+                <div class="stat-value" data-count="4">0</div>
+                <div class="stat-label">projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" data-count="2">0</div>
+                <div class="stat-label">yrs exp</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">UI</div>
+                <div class="stat-label">/ UX design</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">FS</div>
+                <div class="stat-label">full-stack</div>
+              </div>
+            </div>
+            <div class="panel-skills" role="list" aria-label="Core skills">
+              <span class="skill-tag blue" role="listitem">React</span>
+              <span class="skill-tag blue" role="listitem">Python</span>
+              <span class="skill-tag purple" role="listitem">Figma</span>
+              <span class="skill-tag teal" role="listitem">Flask</span>
+              <span class="skill-tag" role="listitem">HTML/CSS</span>
+              <span class="skill-tag purple" role="listitem">UI/UX</span>
+              <span class="skill-tag teal" role="listitem">Agile</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-label="About me">
+      <div class="section-label" aria-hidden="true">About</div>
+      <h2 class="section-title">Building at the intersection<br>of design and engineering.</h2>
+      <div class="about-grid">
+        <div class="fade-in">
+          <p class="about-desc">
+            I am a <strong class="about-highlight">developer and designer</strong> working across digital systems, interfaces and product experiences. I combine web development, UI/UX design and product thinking to create structured, user-centered digital solutions.
+          </p>
+          <p class="about-desc">
+            I have professional experience in <strong class="about-highlight">Product Design at Compass UOL</strong>, where I contributed to UI/UX design processes, agile workflows and digital product development.
+          </p>
+          <div class="experience-card">
+            <div class="exp-icon" aria-hidden="true">🧭</div>
+            <div>
+              <div class="exp-company">Compass UOL</div>
+              <div class="exp-role">// Product Design</div>
+              <div class="exp-desc">UI/UX design processes, agile workflows, and digital product development in a fast-paced tech environment.</div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in" style="--delay: 150ms">
+          <div class="values-grid">
+            <article class="value-card">
+              <span class="value-icon" aria-hidden="true">⚙️</span>
+              <h3 class="value-title">Systems Thinking</h3>
+              <p class="value-desc">Every interface is part of a larger system. I design with the full picture in mind.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-icon" aria-hidden="true">🎯</span>
+              <h3 class="value-title">Product Focus</h3>
+              <p class="value-desc">I build with user outcomes in mind, not just deliverables.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-icon" aria-hidden="true">✦</span>
+              <h3 class="value-title">Design Precision</h3>
+              <p class="value-desc">Clean, purposeful UI that communicates clearly and feels effortless.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-icon" aria-hidden="true">⚡</span>
+              <h3 class="value-title">Fast Iteration</h3>
+              <p class="value-desc">Agile mindset with a bias toward shipping and refining.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-label="Selected projects">
+      <div class="section-label" aria-hidden="true">Projects</div>
+      <h2 class="section-title">Selected work.</h2>
+      <div class="projects-grid">
+
+        <article class="project-card blue-accent fade-in" data-tilt>
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon blue" aria-hidden="true">🎓</div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 class="project-name">Academic System for Teachers</h3>
+            <p class="project-desc">A structured web system that streamlines academic management for educators — class records, student tracking, and reporting in one interface.</p>
+            <div class="project-tags" role="list" aria-label="Technologies">
+              <span class="tech-tag" role="listitem">Flask</span>
+              <span class="tech-tag" role="listitem">Python</span>
+              <span class="tech-tag" role="listitem">SQLite</span>
+              <span class="tech-tag" role="listitem">HTML/CSS</span>
+              <span class="tech-tag" role="listitem">Jinja2</span>
+            </div>
+            <div class="project-footer">
+              <a class="view-case" href="https://github.com/analaismf2" target="_blank" rel="noopener noreferrer">View Case →</a>
+              <span class="project-type">Backend System</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card purple-accent fade-in" data-tilt>
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon purple" aria-hidden="true">🌐</div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 class="project-name">Portfolio Web</h3>
+            <p class="project-desc">A personal portfolio built to reflect digital studio aesthetics — clean architecture, modern UI, and optimized performance across all devices.</p>
+            <div class="project-tags" role="list" aria-label="Technologies">
+              <span class="tech-tag" role="listitem">HTML5</span>
+              <span class="tech-tag" role="listitem">CSS3</span>
+              <span class="tech-tag" role="listitem">JavaScript</span>
+              <span class="tech-tag" role="listitem">Responsive</span>
+            </div>
+            <div class="project-footer">
+              <a class="view-case" href="https://github.com/analaismf2" target="_blank" rel="noopener noreferrer">View Case →</a>
+              <span class="project-type">Frontend</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card teal-accent fade-in" data-tilt>
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon teal" aria-hidden="true">✦</div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 class="project-name">Design for Social Media</h3>
+            <p class="project-desc">Visual identity and social content systems for digital brands — grid strategy, motion graphics, and brand-consistent design at scale.</p>
+            <div class="project-tags" role="list" aria-label="Technologies">
+              <span class="tech-tag" role="listitem">Figma</span>
+              <span class="tech-tag" role="listitem">Illustrator</span>
+              <span class="tech-tag" role="listitem">Brand Design</span>
+              <span class="tech-tag" role="listitem">Motion</span>
+            </div>
+            <div class="project-footer">
+              <a class="view-case" href="https://github.com/analaismf2" target="_blank" rel="noopener noreferrer">View Case →</a>
+              <span class="project-type">Visual Design</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card pink-accent fade-in" data-tilt>
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon pink" aria-hidden="true">▶</div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 class="project-name">Video Editing for Digital Content</h3>
+            <p class="project-desc">End-to-end video production for digital platforms — storytelling, pacing, motion design, and export optimization for social and web.</p>
+            <div class="project-tags" role="list" aria-label="Technologies">
+              <span class="tech-tag" role="listitem">Premiere Pro</span>
+              <span class="tech-tag" role="listitem">After Effects</span>
+              <span class="tech-tag" role="listitem">Motion</span>
+              <span class="tech-tag" role="listitem">Storytelling</span>
+            </div>
+            <div class="project-footer">
+              <a class="view-case" href="https://github.com/analaismf2" target="_blank" rel="noopener noreferrer">View Case →</a>
+              <span class="project-type">Video &amp; Motion</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-label="Skills and capabilities">
+      <div class="section-label" aria-hidden="true">Skills</div>
+      <h2 class="section-title">Capabilities dashboard.</h2>
+      <div class="skills-container">
+
+        <div class="skill-category fade-in">
+          <div class="cat-header">
+            <span class="cat-icon" aria-hidden="true">⬡</span>
+            <div class="cat-name">Frontend</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-pct" aria-hidden="true">90%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML / CSS: 90%">
+              <div class="skill-fill fill-blue" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-pct" aria-hidden="true">75%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript: 75%">
+              <div class="skill-fill fill-blue" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">React</span><span class="skill-pct" aria-hidden="true">65%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="React: 65%">
+              <div class="skill-fill fill-blue" data-width="65%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Responsive Design</span><span class="skill-pct" aria-hidden="true">85%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design: 85%">
+              <div class="skill-fill fill-blue" data-width="85%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in">
+          <div class="cat-header">
+            <span class="cat-icon" aria-hidden="true">◈</span>
+            <div class="cat-name">Backend</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct" aria-hidden="true">80%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Python: 80%">
+              <div class="skill-fill fill-teal" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Flask</span><span class="skill-pct" aria-hidden="true">70%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Flask: 70%">
+              <div class="skill-fill fill-teal" data-width="70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">SQL / SQLite</span><span class="skill-pct" aria-hidden="true">65%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="SQL / SQLite: 65%">
+              <div class="skill-fill fill-teal" data-width="65%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">REST APIs</span><span class="skill-pct" aria-hidden="true">60%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="REST APIs: 60%">
+              <div class="skill-fill fill-teal" data-width="60%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in">
+          <div class="cat-header">
+            <span class="cat-icon" aria-hidden="true">◉</span>
+            <div class="cat-name">Design</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Figma</span><span class="skill-pct" aria-hidden="true">88%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Figma: 88%">
+              <div class="skill-fill fill-purple" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">UI/UX Design</span><span class="skill-pct" aria-hidden="true">85%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="UI/UX Design: 85%">
+              <div class="skill-fill fill-purple" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Brand Identity</span><span class="skill-pct" aria-hidden="true">75%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Brand Identity: 75%">
+              <div class="skill-fill fill-purple" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Motion / Video</span><span class="skill-pct" aria-hidden="true">70%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Motion / Video: 70%">
+              <div class="skill-fill fill-purple" data-width="70%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in">
+          <div class="cat-header">
+            <span class="cat-icon" aria-hidden="true">⌥</span>
+            <div class="cat-name">Tools</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Git / GitHub</span><span class="skill-pct" aria-hidden="true">78%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Git / GitHub: 78%">
+              <div class="skill-fill fill-pink" data-width="78%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Agile / Scrum</span><span class="skill-pct" aria-hidden="true">80%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Agile / Scrum: 80%">
+              <div class="skill-fill fill-pink" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Premiere / AE</span><span class="skill-pct" aria-hidden="true">72%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Premiere / After Effects: 72%">
+              <div class="skill-fill fill-pink" data-width="72%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Illustrator</span><span class="skill-pct" aria-hidden="true">68%</span></div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" aria-label="Illustrator: 68%">
+              <div class="skill-fill fill-pink" data-width="68%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section" aria-label="Contact">
+      <div class="section-label" aria-hidden="true">Contact</div>
+      <h2 class="contact-headline">Let's build something<br><span>digital.</span></h2>
+      <p class="contact-sub">Open to projects, collaborations, and new challenges. Let's create something real.</p>
+      <div class="contact-links">
+        <a href="mailto:analaismacedof@gmail.com" class="contact-link">
+          <span class="link-icon" aria-hidden="true">✉</span>
+          analaismacedof@gmail.com
+        </a>
+        <a href="https://github.com/analaismf2" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <span class="link-icon" aria-hidden="true">⌥</span>
+          github.com/analaismf2
+        </a>
+        <a href="https://linkedin.com/in/macedods" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <span class="link-icon" aria-hidden="true">◈</span>
+          linkedin.com/in/macedods
+        </a>
+      </div>
+      <a href="mailto:analaismacedof@gmail.com" class="btn-primary">Start a conversation →</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-left">© 2025 MACEDO Digital Solutions</div>
+    <div class="footer-right">Ana Laís Macêdo Fonte // Developer &amp; Designer</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
